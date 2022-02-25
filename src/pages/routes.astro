@@ -1,0 +1,25 @@
+---
+    import {getTable} from '../modules/bit-io.js';
+    const routes = await getTable({
+        username: 'ericmikkelsen',
+        project: 'PumaErratic',
+        table: 'routes.csv',
+        APIKey: '33enz_dRuAVGraEumgTVQVknCpWic',
+    })
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        {routes.map((route) => (
+            <li>{route.route_long_name}</li>
+        ))}
+    </ul>
+</body>
+</html>
